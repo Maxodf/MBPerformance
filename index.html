@@ -86,7 +86,7 @@
                     <div class="section-wrapper block content-1170 center-relative">                                                
                         <div class="content-wrapper">                           
                             <h1 class="big-text">
-                               <span class="verminvibes">Mateo</span> 
+                               <span class="verminvibes">MB Performance</span> 
                                 <br>                               
                                <span class="h1span"> Coach sportif </span>
                             </h1>
@@ -215,14 +215,12 @@
 
                                 <article class="relative blog-item-holder-scode">
                                     <div class="post-thumbnail">
-                                        <a href="single.html">
+                
                                             <div class="latest-posts-background-featured-image-holder" data-background-image="images/AL0_0663.jpg"></div>
-                                        </a>                                            
+                                                                                   
                                     </div>
                                     <h4 class="entry-title">
-                                        <a href="single.html">
                                            Léna
-                                        </a>
                                     </h4>
                                     <div class="excerpt">
                                         Bearable only through love hydrogen atoms bits of moving fluff culture shores of the cosmic ocean paroxysm of global death ...
@@ -461,13 +459,13 @@
                     <div class="section-wrapper block content-1170 center-relative">                                                
                         <div class="content-wrapper">
                             <div class="one_half ">
-                                <p class="title-description-up">CONTACT US</p>
+                                <p class="title-description-up">FORMULAIRE</p>
                                 <h2 class="entry-title medium-text">
-                                    Lets start <br>
-                                    Working
+                                    Le formulaire <br>
+                                    bilan
                                 </h2>
                                 <p>
-                                    Because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept one we are.
+                                    Ce formulaire me permettra de faire un bilan sur tes objectifs et de te proposer la meilleure prestation possible, adaptée et personnalisée pour ta demande !   
                                 </p>
                                 <br>
                                 <div class="social">
@@ -499,22 +497,64 @@
 
                             <div class="one_half last ">
                                 <div class="contact-form">
+                                    <p class="littleForm">Nom - Prénom</p>
                                     <p>
-                                        <input id="name" type="text" name="your-name" placeholder="Name">
+                                        <input id="name" type="text" name="your-name" placeholder="Nom - Prénom">
                                     </p>
+                                    <p class="littleForm">Email</p>
                                     <p>
                                         <input id="contact-email" type="email" name="your-email" placeholder="Email">
                                     </p>                                    
-                                    <p>
+                                    <input type="hidden" id="subject" name="your-subject" value="Formulaire de contact">
+                                    <!-- <p>
                                         <input id="subject" type="text" name="your-subject" placeholder="Subject">
-                                    </p>
+                                    </p> -->
+                                    <!-- <p>
+                                        <textarea id="message" name="your-message" placeholder="Taille ici"></textarea>
+                                    </p> -->
+                                    <!-- Ajoutez les nouveaux champs ici -->
+                                    <p class="littleForm">Taille</p>
                                     <p>
-                                        <textarea id="message" name="your-message" placeholder="Message"></textarea>
+                                        <input id="size" type="text" name="your-size" placeholder="Taille">
                                     </p>
+                                    <p class="littleForm">Poids</p>
+                                    <p>
+                                        <input id="weight" type="text" name="your-weight" placeholder="Poids">
+                                    </p>
+                                    <p class="littleForm">Objectifs et sur combien de temps</p>
+                                    <p>
+                                        <textarea id="objectifs" name="your-objectifs" placeholder="Objectifs et sur combien de temps"></textarea>
+                                    </p>
+                                    <p class="littleForm">Pathologie</p>
+                                    <p>
+                                        <input id="pathologie" type="text" name="your-pathologie" placeholder="Pathologie">
+                                    </p>
+                                    <p class="littleForm">Disponibilités (combien d’entraînements par semaine)</p>
+                                    <p>
+                                        <input id="dispos" type="text" name="your-dispos" placeholder="Disponibilités (combien d’entraînements par semaine)">
+                                    </p>
+                                    <p class="littleForm">Combien de temps par entraînement</p>
+                                    <p>
+                                        <input id="temps" type="text" name="your-temps" placeholder="Combien de temps par entraînement">
+                                    </p>
+                                    <p class="littleForm">Régime alimentaire</p>
+                                    <p>
+                                        <textarea id="regime" name="your-regime" placeholder="Régime alimentaire"></textarea>
+                                    </p>
+                                    <p class="littleForm">Etat de forme au quotidien</p>
+                                    <p>
+                                        <input id="forme" type="text" name="your-forme" placeholder="Etat de forme au quotidien">
+                                    </p>
+                                    <p class="littleForm">Des préférences ou des choses à éviter en terme de rythme, d’exercices ?</p>
+                                    <p>
+                                        <textarea id="pref" name="your-pref" placeholder="Des préférences ou des choses à éviter en terme de rythme, d’exercices ?"></textarea>
+                                    </p>
+                                    <!-- Ajoutez d'autres champs ici -->
                                     <p class="contact-submit-holder">
                                         <input type="submit" value="SEND">
                                     </p>  
                                 </div>
+                                
                             </div>                            
                             <div class="clear"></div>
                         </div>                        
@@ -524,18 +564,19 @@
 
 
             <h2>Contactez-nous</h2>
-    <form action="traitement.php" method="post">
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" id="nom" required><br><br>
-        
-        <label for="email">Adresse e-mail :</label>
-        <input type="email" name="email" id="email" required><br><br>
-        
-        <label for="message">Message :</label><br>
-        <textarea name="message" id="message" rows="4" required></textarea><br><br>
-        
-        <input type="submit" value="Envoyer">
-    </form>
+            <form action="/envoyer-email" method="post">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+              
+                <label for="email">Adresse e-mail :</label>
+                <input type="email" id="email" name="email" required>
+              
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+              
+                <input type="submit" value="Envoyer">
+              </form>
+              
 
             <!-- Footer -->
             <footer class="footer">

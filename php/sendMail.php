@@ -1,4 +1,8 @@
+
 <?php
+
+header('Content-Type: text/html; charset=UTF-8');
+
 
 include_once (dirname(dirname(__FILE__)) . '/config.php');
 
@@ -11,22 +15,35 @@ if (isset($_POST["action"])) {
 
     switch ($action) {
         case "SendMessage": {
-                if (isset($_POST["email"]) && !empty($_POST["email"])) {
+            if (isset($_POST["email"]) && !empty($_POST["email"])) {
 
-                    $message = $_POST["message"];
-                    $message .= "<br/><br/>";                                        
-
-                    $response = (SendEmail($message, $_POST["subject"], $_POST["name"], $_POST["email"], $email)) ? 'Message Sent' : "Sending Message Failed";
-                } else {
-                    $response = "Sending Message Failed";
-                }
+                $message = "Nom - prenom: " . htmlspecialchars($_POST["name"]) . "<br/>";
+                $message .= "Mail: " . htmlspecialchars($_POST["email"]) . "<br/>";
+                $message .= "Taille: " . htmlspecialchars($_POST["size"]) . "<br/>";
+                $message .= "Poids: " . htmlspecialchars($_POST["weight"]) . "<br/>";
+                $message .= "Objectifs et sur combien de temps: " . htmlspecialchars($_POST["objectifs"]) . "<br/>";
+                $message .= "Pathologie: " . htmlspecialchars($_POST["pathologie"]) . "<br/>";
+                $message .= "Disponibilites (par semaine): " . htmlspecialchars($_POST["dispos"]) . "<br/>";
+                $message .= "Temps par entrainement: " . htmlspecialchars($_POST["temps"]) . "<br/>";
+                $message .= "Regime alimentaire: " . htmlspecialchars($_POST["regime"]) . "<br/>";
+                $message .= "Etat de forme: " . htmlspecialchars($_POST["forme"]) . "<br/>";
+                $message .= "Preferences: " . htmlspecialchars($_POST["pref"]) . "<br/>";
+                
+                $subject = "Formulaire de contact"; // Définissez le sujet ici
+                
+                $response = (SendEmail($message, $subject, $_POST["name"], $_POST["email"], $email)) ? 'Message Sent' : "Sending Message Failed";
+            } else {
+                $response = "Sending Message Failed";
             }
-            break;
+        }
+        break;
         default: {
-                $response = "Invalid action is set! Action is: " . $action;
-            }
+            $response = "Invalid action is set! Action is: " . $action;
+        }
     }
 }
+
+
 
 
 if (isset($response) && !empty($response) && !is_null($response)) {
@@ -46,5 +63,6 @@ function SendEmail($message, $subject, $name, $from, $to) {
     }
     return $isSent;
 }
+
 
 ?>

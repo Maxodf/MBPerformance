@@ -372,7 +372,16 @@
                     'name': $('#name').val(),
                     'email': $('#contact-email').val(),
                     'subject': $('#subject').val(),
-                    'message': $('#message').val()
+                    'message': $('#message').val(),
+                    'your-size': $('#size').val(),
+                    'your-weight': $('#weight').val(),
+                    'your-objectifs': $('#objectifs').val(),
+                    'your-pathologie': $('#pathologie').val(),
+                    'your-dispos': $('#dispos').val(),
+                    'your-temps': $('#temps').val(),
+                    'your-regime': $('#regime').val(),
+                    'your-forme': $('#forme').val(),
+                    'your-pref': $('#pref').val(),
                 };
                 $.ajax({
                     type: "POST",

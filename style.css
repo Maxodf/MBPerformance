@@ -111,6 +111,18 @@ h1, h2, h3, h4, h5{
     z-index: -1;
 }
 
+.littleForm{
+    font-size: 12px !important;
+    text-align: left !important;
+    color: #b3b3b3;
+}
+
+@media screen and (max-width: 500px) {
+    .littleForm{
+        font-size: 10px !important;
+    }    
+}
+
 .h1span{
     /* text-transform: uppercase; */
     /* font-weight: 100; */
@@ -171,11 +183,16 @@ body pre {
 
 .doc-loader img {
     width: 225px;
-    height: 200px;
     position: absolute;
     top: 50%;    
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 500px) {
+    .doc-loader img {
+        width: 125px;
+    }
 }
 
 .content-1170 {
