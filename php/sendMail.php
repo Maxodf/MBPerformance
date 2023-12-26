@@ -1,4 +1,4 @@
-
+<!-- 
 <?php
 
 header('Content-Type: text/html; charset=UTF-8');
@@ -65,4 +65,31 @@ function SendEmail($message, $subject, $name, $from, $to) {
 }
 
 
+?> -->
+
+
+<?php
+header('Content-Type: application/json; charset=UTF-8');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    $to = 'destination@example.com';  // Mettez votre adresse e-mail ici
+    $subject = 'Nouveau message de ' . $name;
+    $headers = 'From: ' . $name . ' <' . $email . '>';
+
+    if (mail($to, $subject, $message, $headers)) {
+        $response = ['ResponseData' => 'Votre message a été envoyé avec succès. Merci !'];
+    } else {
+        $response = ['ResponseData' => 'Erreur lors de l\'envoi du message. Veuillez réessayer.'];
+    }
+
+    echo json_encode($response);
+} else {
+    $response = ['ResponseData' => 'Méthode non autorisée.'];
+    echo json_encode($response);
+}
 ?>
+

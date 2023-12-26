@@ -432,3 +432,36 @@
     }
 
 })(jQuery);
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        sendMail();
+    });
+
+    function sendMail() {
+        var form = document.getElementById('contactForm');
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.ResponseData);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+});
