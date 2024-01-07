@@ -2009,6 +2009,9 @@ body.blog {
     15. Contact Section CSS
 ====================================== */
 
+.delete {
+    display: none;
+}
 .contact-form {
     max-width: 100%;
     margin: 0 auto;

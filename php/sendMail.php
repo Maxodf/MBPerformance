@@ -31,7 +31,7 @@ if (isset($_POST["action"])) {
                 
                 $subject = "Formulaire de contact"; // Définissez le sujet ici
                 
-                $response = (SendEmail($message, $subject, $_POST["name"], $_POST["email"], $email)) ? 'Message Sent' : "Sending Message Failed";
+                $response = (SendEmail($message, $subject, $_POST["name"], $_POST["email"], $email)) ? 'Formulaire envoyé !' : "Erreur lors de l'envoi du formulaire";
             } else {
                 $response = "Sending Message Failed";
             }

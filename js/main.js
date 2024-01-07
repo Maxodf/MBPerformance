@@ -373,15 +373,15 @@
                     'email': $('#contact-email').val(),
                     'subject': $('#subject').val(),
                     'message': $('#message').val(),
-                    'your-size': $('#size').val(),
-                    'your-weight': $('#weight').val(),
-                    'your-objectifs': $('#objectifs').val(),
-                    'your-pathologie': $('#pathologie').val(),
-                    'your-dispos': $('#dispos').val(),
-                    'your-temps': $('#temps').val(),
-                    'your-regime': $('#regime').val(),
-                    'your-forme': $('#forme').val(),
-                    'your-pref': $('#pref').val(),
+                    'size': $('#size').val(),
+                    'weight': $('#weight').val(),
+                    'objectifs': $('#objectifs').val(),
+                    'pathologie': $('#pathologie').val(),
+                    'dispos': $('#dispos').val(),
+                    'temps': $('#temps').val(),
+                    'regime': $('#regime').val(),
+                    'forme': $('#forme').val(),
+                    'pref': $('#pref').val(),
                 };
                 $.ajax({
                     type: "POST",
@@ -390,9 +390,11 @@
                     success: function (response) {
                         if (response) {
                             var responseObj = $.parseJSON(response);
-                            if (responseObj.ResponseData)
-                            {
+                            if (responseObj.ResponseData) {
                                 alert(responseObj.ResponseData);
+                                $('.contact-form').addClass('delete');
+                            } else {
+                                alert('Votre formulaire a bien été envoyé !');
                             }
                         }
                     },
@@ -402,22 +404,22 @@
                         switch (xhr.status)
                         {
                             case "301":
-                                error = "Redirection Error!";
+                                error = "Erreur de redirection !";
                                 break;
                             case "307":
-                                error = "Error, temporary server redirection!";
+                                error = "Erreur, redirection temporaire du serveur !";
                                 break;
                             case "400":
-                                error = "Bad request!";
+                                error = "Mauvaise demande !";
                                 break;
                             case "404":
-                                error = "Page not found!";
+                                error = "Page non trouvée !";
                                 break;
                             case "500":
-                                error = "Server is currently unavailable!";
+                                error = "Le serveur n'est actuellement pas disponible";
                                 break;
                             default:
-                                error = "Unespected error, please try again later.";
+                                error = "Erreur inattendue, veuillez réessayer plus tard.";
                         }
                         if (error) {
                             alert(error);
@@ -426,7 +428,7 @@
                 });
             } else
             {
-                alert('Your email is not in valid format');
+                alert('Votre email n\'est pas dans un format valide');
             }
         });
     }
