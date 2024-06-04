@@ -536,7 +536,7 @@ body .sm-clean li.current_page_item > a {
 
 .social {
     display: inline-block;
-    font-size: 25px;
+    font-size: 30px;
     margin-right: 20px;
 }
 
@@ -620,6 +620,11 @@ body .social a:hover {
 /* ===================================
     2.4 Button CSS
 ====================================== */
+
+#home a.button:hover{
+    color: #fff;
+    border-color: #fff;
+}
 
 body a.button {
     display: inline-block;
@@ -1001,6 +1006,10 @@ h1.big-text {
     background-size: auto;
 }
 
+#news h4{
+    color: #000;
+}
+
 .blog-holder-scode {
     margin-top: 0;
     width: 1370px;
@@ -1077,7 +1086,7 @@ h1.big-text {
 }
 
 .grid-sizer {
-    width: 25%;
+    width: 33.3%;
 }
 
 .grid-item {
@@ -1089,13 +1098,13 @@ h1.big-text {
 }
 
 .grid-item.p_one_fourth {
-    width: 25%;
-    height: 100vh;
+    width: 33.3%;
+    height: 90vh;
 }
 
 @media screen and (max-width:1020px) {
     .grid-item.p_one_fourth {
-        width: 25%;
+        width: 33.3%;
         height: 50vh;
     }  
 }
@@ -1187,7 +1196,7 @@ h1.big-text {
     background-color: #000;
     left: 0;
     top: 0;
-    opacity: 0.7;
+    opacity: 0.5;
     transition: opacity .3s ease-in-out;
 }
 
@@ -1208,7 +1217,7 @@ h1.big-text {
     line-height: 170%;
     margin-bottom: 0;
     font-weight: 700;
-    color: #b3b3b3;
+    color: #fff;
 }
 
 .portfolio-desc {
@@ -1220,7 +1229,7 @@ h1.big-text {
 }
 
 .grid-item a.item-link:hover:after {
-    opacity: 0.5;
+    opacity: 0;
 }
 
 .portfolio-content h1 {
